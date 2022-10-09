@@ -1,0 +1,77 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(45deg, purple, rgb(31, 164, 109));
+	font-family: 'Roboto Mono';
+    margin: auto;
+}
+
+header #top{
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+
+}
+
+header #top .topleft img{
+    max-width: 80px;
+    max-height: 80px;
+    height: auto;
+    width: auto;
+
+}
+
+
+header #top .links a{
+    margin: 10px 10px 10px 10px;
+    transition: color 1s;
+    color: white;
+    text-decoration: none;
+    
+}
+
+header #top .links a:hover{
+    color: yellow;
+
+}
+
+main #mid .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+
+}
+
+main #mid .content p {
+    width: 600px;
+    margin-top: 135px;
+    margin-left: 100px;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: purple;
+    
+
+}
+
+main #mid .content img{
+    float: right;
+    background-color: violet;
+    border-radius: 10px;
+    width: 200px;
+    float: right;
+}
+
+ footer #bot .bottom p{
+margin-left: 47%;
+margin-top: 28%;
+color: white;
+} 
+
