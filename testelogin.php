@@ -33,7 +33,7 @@
             header('Location: testelogin.php');
         }
 
-        if (num < 1)
+        if ($num < 1)
         {
             unset($_SESSION['email_usuario']);
             unset($_SESSION['usuario_senha']);

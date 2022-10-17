@@ -1,41 +1,34 @@
 <?php
-    if(isset($_POST['submit']))
+    if(!empty($_GET['cod_usuario']))
     {
-        // print_r($_POST['nome_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['sobrenome_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['cpf_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['data_nascimento']);
-        // print_r('<br>');
-        // print_r($_POST['email_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['usuario_senha']);
 
         include('config.php');
 
-    $timezone = new DateTimeZone('America/Sao_Paulo');
-    $agora = new DateTime('now', $timezone);
+        $cod_usuario = $_GET['cod_usuario'];
 
-    $dataAtual = $agora->format('Y-d-m H:i:s');
+        $sqlSelect = "SELECT * FROM usuarios WHERE cod_usuario= $cod_usuario";
+        $result = $conexao->query($sqlSelect);
 
-        // nome_usuario
-        // sobrenome_usuario
-        // cpf_usuario
-        // data_nascimento
-        // email_usuario
-        // usuario_senha
+        if ($result->num_rows > 0)
+        {
+            while($user_data = mysqli_fetch_assoc($result))
+            {
 
-        $nome_usuario      = $_POST['nome_usuario'];
-        $sobrenome_usuario = $_POST['sobrenome_usuario'];
-        $cpf_usuario       = $_POST['cpf_usuario'];
-        $data_nascimento   = $_POST['data_nascimento'];
-        $email_usuario     = $_POST['email_usuario'];
-        $usuario_senha     = $_POST['usuario_senha'];
+                $nome_usuario      = $user_data['nome_usuario'];
+                $sobrenome_usuario = $user_data['sobrenome_usuario'];
+                $cpf_usuario       = $user_data['cpf_usuario'];
+                $data_nascimento   = $user_data['data_nascimento'];
+                $email_usuario     = $user_data['email_usuario'];
+                $usuario_senha     = $user_data['usuario_senha'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome_usuario,sobrenome_usuario,cpf_usuario,data_nascimento,email_usuario,usuario_senha,tipo,dta_cadastro) VALUES ('$nome_usuario','$sobrenome_usuario','$cpf_usuario','$data_nascimento','$email_usuario','$usuario_senha',3,'$dataAtual')");
-        header('Location: teladelogin.php');
+            }
+            
+
+        }
+        else
+        {
+            header('Location: user.php');
+        }
     }
 ?>
 
@@ -59,18 +52,9 @@
     <header>
         <div id="top">
             <div class="topleft">
-                <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
-                <!--<a href="index.html"> <h1>Khos</h1> </a>-->
+                <a href="user.php"><img src="images/Khos-removebg-preview.png" alt=""></a>
             </div><!--topleft-->        
     </header>
-
-
-    <!-- • nome_usuario
-    • sobrenome_usuario
-    •cpf_usuario
-    •data_nascimento
-    •email_usuario
-    •senha_usuario -->
 
     <div id="mid">
         <form action="teladecadastro.php" method="POST">
