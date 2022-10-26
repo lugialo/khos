@@ -27,18 +27,3 @@ header #top .topleft img{
     /mid
     */
 }
-
-main a{
-    text-decoration: none;
-    color: black;
-}
-
-main a:hover{
-    color: yellow;
-}
-
-.table{
-    background-color: aliceblue;
-    font-family: 'Roboto Mono';
-}
-

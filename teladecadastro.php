@@ -64,14 +64,6 @@
             </div><!--topleft-->        
     </header>
 
-
-    <!-- • nome_usuario
-    • sobrenome_usuario
-    •cpf_usuario
-    •data_nascimento
-    •email_usuario
-    •senha_usuario -->
-
     <div id="mid">
         <form action="teladecadastro.php" method="POST">
             <fieldset>

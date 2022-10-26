@@ -19,7 +19,7 @@
                 $cpf_usuario       = $user_data['cpf_usuario'];
                 $data_nascimento   = $user_data['data_nascimento'];
                 $email_usuario     = $user_data['email_usuario'];
-                $usuario_senha     = $user_data['usuario_senha'];
+                $tipo     = $user_data['tipo'];
 
             }
             
@@ -29,6 +29,10 @@
         {
             header('Location: user.php');
         }
+    }
+    else
+    {
+        header('Location: user.php');
     }
 ?>
 
@@ -42,10 +46,10 @@
     <link rel="stylesheet" href="stylescadastro.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"/>
     <script type="text/javascript" src="JS/cadastro.js"></script>
-    <title>Cadastro</title>
+    <title>Edição de Usuários</title>
 
     <style>
-        <?php include 'CSS/stylescadastro.css'; ?>
+        <?php include 'CSS/stylesedit.css'; ?>
     </style>
 </head>
 <body>
@@ -57,58 +61,60 @@
     </header>
 
     <div id="mid">
-        <form action="teladecadastro.php" method="POST">
+        <form action="salvarUsuario.php" method="POST">
             <fieldset>
 
-                <legend class="legend"><b>Cadastro de Usuário</b></legend>
+                <legend class="legend"><b>Editar Usuário</b></legend>
 
                 <br>
 
                 <div class="inputBox">
-                    <input type="text" name="nome_usuario" id="nome_usuario" class="inputUser" required><!--nome-->
+                    <input type="text" name="nome_usuario" id="nome_usuario" class="inputUser" value="<?php echo $nome_usuario?>" required><!--nome-->
                     <label for="nome">Nome</label>
                 </div>
 
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="sobrenome_usuario" id="sobrenome_usuario" class="inputUser" required><!--sobrenome-->
+                    <input type="text" name="sobrenome_usuario" id="sobrenome_usuario" class="inputUser" value="<?php echo $sobrenome_usuario?>" required><!--sobrenome-->
                     <label for="sobrenome">Sobrenome</label>
                 </div>
 
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="cpf_usuario" id="cpf_usuario" class="inputUser" required placeholder="" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()">
+                    <input type="text" name="cpf_usuario" id="cpf_usuario" class="inputUser" value="<?php echo $cpf_usuario?>" required placeholder="" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()">
                     <label for="cpf">CPF</label>
                 </div>
 
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="date" name="data_nascimento" id="data_nascimento" class="datnasc" required><!--data de nascimento-->
+                    <input type="date" name="data_nascimento" id="data_nascimento" class="inputUser" value="<?php echo $data_nascimento?>"required><!--data de nascimento-->
                     <label for="datnasc">Data de Nascimento</label>
                 </div>
 
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="email_usuario" id="email_usuario" class="inputUser" required><!--email-->
+                    <input type="text" name="email_usuario" id="email_usuario" class="inputUser" value="<?php echo $email_usuario?>" required><!--email-->
                     <label for="email">E-mail</label>
                 </div>
 
-                <br><br>
-
-                <div class="inputBox">
-                    <input type="password" name="usuario_senha" id="usuario_senha" class="inputUser" required> <!--senha-->
-                    <label for="senha">Senha</label>
-                </div>
-
-                <br><br>
-                <a href="teladelogin.php">Já possui uma conta?</a>
                 <br>
+                <p>Tipo de Usuário</p>
+                <input type="radio" id="Desenvolvedor" name="tipo" class="dev" value="1" <?php echo $tipo == '1' ? 'checked' : '' ?> required>
+                <label for="Desenvolvedor">Desenvolvedor</label>
                 <br>
-                <input type="submit" name="submit" id="submit">
+                <input type="radio" id="Administrador" name="tipo" class="adm" value="2" <?php echo $tipo == '2' ? 'checked' : '' ?> required>
+                <label for="Desenvolvedor">Administrador</label>
+                <br>
+                <input type="radio" id="Usuário" name="tipo" class="usuario" value="3" <?php echo $tipo == '3' ? 'checked' : '' ?> required>
+                <label for="Usuário">Usuário</label>
+                <br><br>
+                <br>
+                <input type="hidden" name="cod_usuario" value="<?php echo $cod_usuario ?>">
+                <input type="submit" name="update" id="update">
             </fieldset>
         </form>
     </div>

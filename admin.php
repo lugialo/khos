@@ -2,6 +2,9 @@
     session_start();
     include_once('config.php');
     print_r($_SESSION);
+    echo ("<br>");
+    echo ("<br>");
+    print_r($_SESSION['email_usuario']);
     if((!isset($_SESSION['email_usuario']) == true) and (!isset($_SESSION['usuario_senha']) == true))
     {
         unset($_SESSION['email_usuario']);
@@ -19,7 +22,7 @@
 </style>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
