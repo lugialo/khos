@@ -1,17 +1,6 @@
 <?php
     if(isset($_POST['submit']))
     {
-        // print_r($_POST['nome_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['sobrenome_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['cpf_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['data_nascimento']);
-        // print_r('<br>');
-        // print_r($_POST['email_usuario']);
-        // print_r('<br>');
-        // print_r($_POST['usuario_senha']);
 
         include('config.php');
 
@@ -19,13 +8,6 @@
     $agora = new DateTime('now', $timezone);
 
     $dataAtual = $agora->format('Y-d-m H:i:s');
-
-        // nome_usuario
-        // sobrenome_usuario
-        // cpf_usuario
-        // data_nascimento
-        // email_usuario
-        // usuario_senha
 
         $nome_usuario      = $_POST['nome_usuario'];
         $sobrenome_usuario = $_POST['sobrenome_usuario'];

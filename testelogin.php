@@ -40,13 +40,7 @@
             header('Location: teladelogin.php');
         }
         }
-
-        
-       
-
-        
-
-    
+            
     else
     {
         header('Location: teladelogin.php');
