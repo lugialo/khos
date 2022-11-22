@@ -29,9 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `adotante` (
   `nome_adotante` varchar(50) NOT NULL,
-  `cpf` varchar(50) NOT NULL,
-  `data_nascimento` date NOT NULL,
-  `email` varchar(50) NOT NULL,
   `genero` char(1) NOT NULL,
   `situacao_civil` varchar(50) NOT NULL,
   `generico1` varchar(50) NOT NULL,
@@ -39,8 +36,12 @@ CREATE TABLE `adotante` (
   `generico3` varchar(50) NOT NULL,
   `generico4` varchar(50) NOT NULL,
   `generico5` varchar(50) NOT NULL,
-  `id_adotante` int(11) NOT NULL,
-  `cod_usuario` int(11) NOT NULL
+  `generico6` varchar(50) NOT NULL,
+  `generico7` varchar(50) NOT NULL,
+  `generico8` varchar(50) NOT NULL,
+  `generico9` varchar(50) NOT NULL,
+  `generico10` varchar(50) NOT NULL,
+  `status` int(1) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
