@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once('config.php');
-    print_r($_SESSION);
+                                                                    print_r($_SESSION);
     if((!isset($_SESSION['email_usuario']) == true) and (!isset($_SESSION['usuario_senha']) == true))
     {
         unset($_SESSION['email_usuario']);
@@ -13,11 +13,16 @@
 
     $sql = "SELECT * from usuarios where email_usuario = '$login'";
 
-    $result = $conexao->query($sql);
-    
-    print_r($result);
+    $id_consulta = mysqli_query($conexao, "SELECT * FROM usuarios WHERE email_usuario = '$login'");
 
-    
+    $usuario = mysqli_fetch_object($id_consulta);
+
+
+    $result = $conexao->query($sql);
+
+    $id_usuario = $usuario->cod_usuario;
+
+    print_r($id_usuario);    
 
 ?>
 <style>

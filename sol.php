@@ -1,5 +1,44 @@
+<?php
+    session_start();
+    include_once('config.php');
+    print_r($_SESSION);
+    echo ("<br>");
+    echo ("<br>");
+
+    print_r($_SESSION['email_usuario']);
+
+    $login = $_SESSION['email_usuario'];
+
+    $id_consulta = mysqli_query($conexao, "SELECT * from usuarios where email_usuario = '$login'");
+
+    $usuario = mysqli_fetch_object($id_consulta);
+
+    $id_usuario = $usuario->cod_usuario;
+    echo("<br>");
+    print_r($id_usuario);
+
+
+    if(isset($_POST['submit']))
+    {
+        $nome_adotante     = $_POST['nome_adotante'];
+        $genero            = $_POST['genero'];
+        $situacao_civil    = $_POST['situacao_civil'];
+        $pergunta1         = $_POST['pergunta1'];
+        $pergunta2         = $_POST['pergunta2'];
+        $pergunta3         = $_POST['pergunta3'];
+        $pergunta4         = $_POST['pergunta4'];
+        $pergunta5         = $_POST['pergunta5'];
+        
+        $result = mysqli_query($conexao, "INSERT INTO adotante (nome_adotante,genero,situacao_civil,generico1,generico2,generico3,generico4,generico5,statusa) VALUES ('$nome_adotante','$genero','$situacao_civil','$pergunta1','$pergunta2','$pergunta3','$pergunta4','$pergunta5',1)");
+        header('Location: telainicial.php');
+    }
+    
+
+?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
 <head>
     <meta charset="iso-88951">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,13 +71,6 @@
                 <br>
 
                 <div class="inputBox">
-                    <input type="text" name="nome_adotante" id="nome_adotante" class="inputUser" required>
-                    <label for="nome">Nome do Adotante</label>
-                </div>
-
-                <br>
-
-                <div class="inputBox">
                     <select name="genero" id="genero" required>
                     <option selected disabled>Escolha</option> 
                     <option value="M">Masculino</option>
@@ -47,6 +79,57 @@
                     <option value="O">Outro</option>
                     </select>
                     <label for="gen">Gênero</label>
+                </div>
+
+                <br>
+
+                <div class="inputBox">
+                    <select name="estado" id="estado" required>
+                    <option selected disabled>Escolha</option> 
+                    <option value="AC">AC</option>	
+                    <option value="AL">AL</option>	
+                    <option value="AP">AP</option>	
+                    <option value="AM">AM</option>	
+                    <option value="BA">BA</option>	
+                    <option value="CE">CE</option>	
+                    <option value="DF">DF</option>	
+                    <option value="ES">ES</option>	
+                    <option value="GO">GO</option>	
+                    <option value="MA">MA</option>	
+                    <option value="MT">MT</option>	
+                    <option value="MS">MS</option>	
+                    <option value="MG">MG</option>	
+                    <option value="PA">PA</option>	
+                    <option value="PB">PB</option>	
+                    <option value="PR">PR</option>	
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>	
+                    <option value="RJ">RJ</option>	
+                    <option value="RN">RN</option>	
+                    <option value="RS">RS</option>	
+                    <option value="RO">RO</option>	
+                    <option value="RR">RR</option>	
+                    <option value="SC">SC</option>	
+                    <option value="SP">SP</option>	
+                    <option value="SE">SE</option>	
+                    <option value="TO">TO</option>
+                    
+                    </select>
+                    <label for="est">Estado</label>
+                </div>
+
+                <br>
+
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cid">Cidade</label>
+                </div>
+
+                <br>
+
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="cid">Endereço</label>
                 </div>
 
                 <br>
@@ -64,6 +147,42 @@
                     <label for="sc">Situação Civil</label>
                 </div>
 
+                <div class="inputBox">
+                    <p>Pergunta 1</p>
+                    <textarea name="pergunta1" id="pergunta1" required class="inputUser"></textarea>
+                </div>
+
+                <br>
+
+                <div class="inputBox">
+                    <p>Pergunta 2</p>
+                    <textarea name="pergunta2" id="pergunta2" required class="inputUser"></textarea>
+                </div>
+
+                <br>
+
+                <div class="inputBox">
+                    <p>Pergunta 3</p>
+                    <textarea name="pergunta3" id="pergunta3" required class="inputUser"></textarea>
+                </div>
+
+                <br>
+                
+                <div class="inputBox">
+                    <p>Pergunta 4</p>
+                    <textarea name="pergunta4" id="pergunta4" required class="inputUser"></textarea>
+                </div>
+
+                <br>
+                
+                <div class="inputBox">
+                    <p>Pergunta 5</p>
+                    <textarea name="pergunta5" id="pergunta5" required class="inputUser"></textarea>
+                </div>
+
+                <br>
+
+                <input type="submit" name="submit" id="submit">
             </fieldset>
         </form>
 
