@@ -57,12 +57,12 @@ a:hover{
     color: yellow;
 }
 
-#submit{
+#submit2{
     background-color: aqua;
     position: relative;
     border: none;
     padding: 13px;
-    width: 100%;
+    width: 25%;
     border-radius: 9px;
     font-size: 13px;
     font-family: 'Arial';
@@ -71,7 +71,7 @@ a:hover{
     border-radius .5s;
  }
 
- #submit *{
+ #submit2 *{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -83,19 +83,19 @@ a:hover{
     opacity: 0;
  }
  
- #submit:focus .icon{
+ #submit2:focus .icon{
     opacity: 1;
     transition-delay: .5s;
  }
  
- #submit:hover{
+ #submit2:hover{
    background-color: aquamarine;
  }
  
- #submit {
+ #submit2 {
   transition: all 0.3s ease;
  }
- #submit:hover {
+ #submit2:hover {
    box-shadow:
    -7px -7px 20px 0px #fff9,
    -4px -4px 5px 0px #fff9,
@@ -106,3 +106,46 @@ a:hover{
 select{
     width: 178.67px
 }
+
+#reprove{
+    background-color: red;
+    position: relative;
+    left: 50%;
+    border: none;
+    padding: 13px;
+    width: 25%;
+    border-radius: 9px;
+    font-size: 13px;
+    font-family: 'Arial';
+    cursor: pointer;
+    transition: width .5s,
+    border-radius .5s;
+ }
+
+ #reprove *{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .25;
+ 
+ }
+ 
+ .icon{
+    opacity: 0;
+ }
+ 
+ #reprove:focus .icon{
+    opacity: 1;
+    transition-delay: .5s;
+ }
+ 
+ #reprove {
+  transition: all 0.3s ease;
+ }
+ #reprove:hover {
+   box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+ }

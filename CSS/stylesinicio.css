@@ -21,9 +21,18 @@ header #top .topleft img{
     max-height: 80px;
     height: auto;
     width: auto;
-    /*
-    mid
-        #inputBox .sobrenome_usuario
-    /mid
-    */
+}
+
+header #top .links a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+header #top .links a:hover {
+    color: yellow;
+}
+
+.card{
+    left: 1%;
 }

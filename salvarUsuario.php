@@ -14,8 +14,9 @@
        $sqlUpdate = "UPDATE usuarios SET nome_usuario= '$nome_usuario',sobrenome_usuario= '$sobrenome_usuario',data_nascimento='$data_nascimento',email_usuario='$email_usuario',tipo='$tipo' WHERE cod_usuario='$cod_usuario'";
 
        $result = $conexao->query($sqlUpdate);
+
+       print_r($result);
     }
-    header('Location: user.php');
-    
+    // header('Location: user.php');
 
 ?>

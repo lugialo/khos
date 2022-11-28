@@ -19,7 +19,7 @@
                 $cpf_usuario       = $user_data['cpf_usuario'];
                 $data_nascimento   = $user_data['data_nascimento'];
                 $email_usuario     = $user_data['email_usuario'];
-                $tipo     = $user_data['tipo'];
+                $tipo              = $user_data['tipo'];
 
             }
             
@@ -78,13 +78,6 @@
                 <div class="inputBox">
                     <input type="text" name="sobrenome_usuario" id="sobrenome_usuario" class="inputUser" value="<?php echo $sobrenome_usuario?>" required><!--sobrenome-->
                     <label for="sobrenome">Sobrenome</label>
-                </div>
-
-                <br><br>
-
-                <div class="inputBox">
-                    <input type="text" name="cpf_usuario" id="cpf_usuario" class="inputUser" value="<?php echo $cpf_usuario?>" required placeholder="" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()">
-                    <label for="cpf">CPF</label>
                 </div>
 
                 <br><br>

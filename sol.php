@@ -22,6 +22,9 @@
     {
         $nome_adotante     = $_POST['nome_adotante'];
         $genero            = $_POST['genero'];
+        $estado            = $_POST['estado'];
+        $cidade            = $_POST['cidade'];
+        $endereco          = $_POST['endereco'];
         $situacao_civil    = $_POST['situacao_civil'];
         $pergunta1         = $_POST['pergunta1'];
         $pergunta2         = $_POST['pergunta2'];
@@ -29,8 +32,12 @@
         $pergunta4         = $_POST['pergunta4'];
         $pergunta5         = $_POST['pergunta5'];
         
-        $result = mysqli_query($conexao, "INSERT INTO adotante (nome_adotante,genero,situacao_civil,generico1,generico2,generico3,generico4,generico5,statusa) VALUES ('$nome_adotante','$genero','$situacao_civil','$pergunta1','$pergunta2','$pergunta3','$pergunta4','$pergunta5',1)");
-        header('Location: telainicial.php');
+        $result = mysqli_query($conexao, "INSERT INTO adotante (nome_adotante,genero,estado,cidade,endereco,situacao_civil,generico1,generico2,generico3,generico4,generico5,statusa,cod_usuario) VALUES ('$nome_adotante','$genero','$estado','$cidade','$endereco','$situacao_civil','$pergunta1','$pergunta2','$pergunta3','$pergunta4','$pergunta5',1,'$id_usuario')");
+        header('Location: paginainicial.php');
+
+        //1 - pendente
+        //2 - reprovado
+        //3 - aprovado
     }
     
 
@@ -46,9 +53,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet"/>
     <title>Cadastro de Solicitação</title>
 
-    <style>
+   <style>
         <?php include 'CSS/stylessol.css'; ?>
-    </style>
+    </style> 
 </head>
 <body>
     <header>
@@ -58,7 +65,6 @@
     <div id="mid">
         <form action="sol.php" method="POST">
             <fieldset>
-
                 <legend class="legend"><b>Cadastro de Solicitação</b></legend>
 
                 <br>
@@ -140,43 +146,43 @@
                     <option value="S">Solteiro(a)</option>
                     <option value="C">Casado(a)</option>
                     <option value="D">Divorciado(a)</option>
+                    <option value="V">Viúvo(a)</option>
                     <option value="O">Outro</option>
-
 
                     </select>
                     <label for="sc">Situação Civil</label>
                 </div>
 
                 <div class="inputBox">
-                    <p>Pergunta 1</p>
+                    <p>Quantas pessoas residem na sua família, contando com você?</p>
                     <textarea name="pergunta1" id="pergunta1" required class="inputUser"></textarea>
                 </div>
 
                 <br>
 
                 <div class="inputBox">
-                    <p>Pergunta 2</p>
+                    <p>Qual a renda média mensal, por pessoa?</p>
                     <textarea name="pergunta2" id="pergunta2" required class="inputUser"></textarea>
                 </div>
 
                 <br>
 
                 <div class="inputBox">
-                    <p>Pergunta 3</p>
+                    <p>O que você considera como "ser responsável por uma vida"?</p>
                     <textarea name="pergunta3" id="pergunta3" required class="inputUser"></textarea>
                 </div>
 
                 <br>
                 
                 <div class="inputBox">
-                    <p>Pergunta 4</p>
+                    <p>Qual o seu real desejo em adotar uma criança ou adolescente?</p>
                     <textarea name="pergunta4" id="pergunta4" required class="inputUser"></textarea>
                 </div>
 
                 <br>
                 
                 <div class="inputBox">
-                    <p>Pergunta 5</p>
+                    <p>Você faz uso de alguma droga e/ou ingere bebidas alcoólicas com frequência? Se sim, detalhe...</p>
                     <textarea name="pergunta5" id="pergunta5" required class="inputUser"></textarea>
                 </div>
 
@@ -190,3 +196,4 @@
     
 </body>
 </html>
+<!-- it's my house! -->

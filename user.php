@@ -9,12 +9,19 @@
     }
 
     $login = $_SESSION['email_usuario'];
-
-    $sql = "SELECT * from usuarios ORDER BY cod_usuario DESC";
-
+    if(!empty($_GET['search']))
+    {
+        $data = $_GET['search'];
+        
+        $sql = "SELECT * from usuarios WHERE cod_usuario like '%$data%' or nome_usuario LIKE '%$data%' or email_usuario LIKE '%$data%' ORDER BY cod_usuario DESC";
+    }
+    else
+    {
+        $sql = "SELECT * from usuarios ORDER BY cod_usuario DESC";
+    }
     $result = $conexao->query($sql);
     
-    print_r($result);
+    // print_r($result);
     
     
 
@@ -41,12 +48,16 @@
                 <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
                 <!--<a href="index.html"> <h1>Khos</h1> </a>-->
             </div><!--topleft-->  
+
+            <div class="links">
+                <a href="admin.php">Voltar</a>
+            </div><!--links-->
     </header>
 
     <main>
         <div class="box-search">
             <input type="search" class="form-control w-25" placeholder="Buscar" id="buscar">  
-            <button class="btn btn-dark">
+            <button onclick="searchUser()" class="btn btn-dark">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
             </svg>
@@ -113,10 +124,12 @@
         </div>  
     </main>
 
+
+
     <script src="JS/confirmation.js"></script>
+    <script src="JS/searchuser.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="JS/checkdelete.js"></script>
 </body>
 </html>
