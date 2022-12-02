@@ -1,10 +1,6 @@
 <?php
     session_start();
     include_once('config.php');
-    // print_r($_SESSION);
-    // echo ("<br>");
-    // echo ("<br>");
-    // print_r($_SESSION['email_usuario']);
     if((!isset($_SESSION['email_usuario']) == true) and (!isset($_SESSION['usuario_senha']) == true))
     {
         unset($_SESSION['email_usuario']);
@@ -34,20 +30,19 @@
     <header>
         <div id="top">
             <div class="topleft">
-                <a href="src/index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
-                <!--<a href="index.html"> <h1>Khos</h1> </a>-->
+                <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
             </div><!--topleft-->  
             
             <div class="links">
-                <a href="src/exit.php">Sair</a>
+                <a href="exit.php">Sair</a>
             </div><!--links-->
         </div>
     </header>
 
     <main>
-    <a href="src/user.php">Controle de Usuário</a>
+    <a href="user.php">Controle de Usuário</a>
     <br>
-    <a href="src/soli.php">Controle de Solicitações</a>
+    <a href="soli.php">Controle de Solicitações</a>
 
     </main>
     

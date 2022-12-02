@@ -47,7 +47,15 @@
 </head>
 <body>
     <header>
+    <div id="top">
+        <div class="topleft">
+            <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
+        </div><!--topleft-->  
         
+        <div class="links">
+            <a href="admin.php">Voltar</a>
+        </div><!--links-->
+    </div>    
     </header>
 
     <div id="mid">

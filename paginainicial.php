@@ -4,7 +4,7 @@
 
     session_start();
     include_once('config.php');
-                                                                    print_r($_SESSION);
+    print_r($_SESSION);
     if((!isset($_SESSION['email_usuario']) == true) and (!isset($_SESSION['usuario_senha']) == true))
     {
         unset($_SESSION['email_usuario']);
@@ -16,7 +16,7 @@
 
     $sql = "SELECT * from usuarios where email_usuario = '$login'";
 
-    $id_consulta = mysqli_query($conexao, "SELECT * FROM usuarios WHERE email_usuario = '$login'");
+    $id_consulta  = mysqli_query($conexao, "SELECT * FROM usuarios WHERE email_usuario = '$login'");
 
 
     $usuario = mysqli_fetch_object($id_consulta);
@@ -62,14 +62,6 @@
 
         }
      }
-
-
-    print_r($id_usuario);
-    echo("<br>");
-    echo("<br>");
-    print_r($fk_usuario);
-
-
 ?>
 <style>
     <?php include 'CSS/stylesinicio.css'; ?>
@@ -90,7 +82,7 @@
         <div id="top">
             <div class="topleft">
                 <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
-                <!--<a href="index.html"> <h1>Khos</h1> </a>-->
+                
             </div><!--topleft-->  
             
             <div class="links">
@@ -111,7 +103,26 @@
     echo "<div class='card-header'> Sua solicitação: " . $id_solicitacao . "</div>";
     echo "<ul class='list-group list-group-flush'>";
     echo "<li class='list-group list-group-item'>Nome: " . $nome_adotante . "</li>";
-    echo "<li class='list-group list-group-item'>Gênero: " . $genero . "</li>";
+    if ($genero = 'M')
+    {
+        echo "<li class='list-group list-group-item'>Gênero: Masculino</li>";
+    }
+    elseif ($genero = 'F')
+    {
+        echo "<li class='list-group list-group-item'>Gênero: Feminino</li>";
+    }
+    elseif ($genero = 'S')
+    {
+        echo "<li class='list-group list-group-item'>Gênero: Solteiro</li>";
+    }
+    elseif ($genero = 'P')
+    {
+        echo "<li class='list-group list-group-item'>Gênero: Não informado</li>";
+    }
+    elseif ($genero = 'O')
+    {
+        echo "<li class='list-group list-group-item'>Gênero: Outro</li>";
+    }
     echo "<li class='list-group list-group-item'>Estado: " . $estado . "</li>";
     echo "<li class='list-group list-group-item'>Cidade: " . $cidade . "</li>";
     echo "<li class='list-group list-group-item'>Endereço: " . $endereco ."</li>";
@@ -144,10 +155,8 @@
         echo"<li class='list-group list-group-item'>Status: Aprovada! Verifique mais informações via e-mail</li>";
     }
             }
-
      ?>
      </div>
-    
-    
+        
 </body>
 </html>

@@ -18,7 +18,7 @@
             while ($percorrer = mysqli_fetch_array($sql)){
                    $adm = $percorrer['tipo'];
             
-            if ($adm == 3){
+            if ($adm == 1 or $adm == 2){
                 $_SESSION['email_usuario'] = $email_usuario;
                 $_SESSION['usuario_senha'] = $usuario_senha;
                 header('Location: admin.php');

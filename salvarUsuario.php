@@ -15,8 +15,7 @@
 
        $result = $conexao->query($sqlUpdate);
 
-       print_r($result);
     }
-    // header('Location: user.php');
+     header('Location: user.php');
 
 ?>

@@ -26,6 +26,15 @@ header #top .topleft img{
     */
 }
 
+header #top a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+header #top a:hover{
+    color: yellow;
+}
+
 
 body #mid{
         background-color: rgba(240, 248, 255, 0.8); 

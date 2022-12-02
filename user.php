@@ -19,12 +19,7 @@
     {
         $sql = "SELECT * from usuarios ORDER BY cod_usuario DESC";
     }
-    $result = $conexao->query($sql);
-    
-    // print_r($result);
-    
-    
-
+    $result = $conexao->query($sql);    
 ?>
 <style>
 <?php include 'CSS/stylesuser.css'; ?>
@@ -46,7 +41,6 @@
         <div id="top">
             <div class="topleft">
                 <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
-                <!--<a href="index.html"> <h1>Khos</h1> </a>-->
             </div><!--topleft-->  
 
             <div class="links">

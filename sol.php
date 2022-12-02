@@ -1,11 +1,6 @@
 <?php
     session_start();
     include_once('config.php');
-    print_r($_SESSION);
-    echo ("<br>");
-    echo ("<br>");
-
-    print_r($_SESSION['email_usuario']);
 
     $login = $_SESSION['email_usuario'];
 
@@ -15,7 +10,6 @@
 
     $id_usuario = $usuario->cod_usuario;
     echo("<br>");
-    print_r($id_usuario);
 
 
     if(isset($_POST['submit']))
@@ -196,4 +190,3 @@
     
 </body>
 </html>
-<!-- it's my house! -->

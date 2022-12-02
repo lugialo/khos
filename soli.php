@@ -9,22 +9,20 @@
     }
 
     $login = $_SESSION['email_usuario'];
+    if(!empty($_GET['search']))
+    {
+        $data = $_GET['search'];
+
+        $solicitacoes = "SELECT * from adotante WHERE statusa = 1 and id_solicitacao like '%$data%' or nome_adotante like '%$data%' ORDER BY id_solicitacao";
+    }
+    else
+    {
 
     $solicitacoes = "SELECT * from adotante where statusa = 1 ORDER BY id_solicitacao";
 
-
+    }
     $result = $conexao->query($solicitacoes);
-
-    // print_r($result);
-    // echo"<br>";
-    // echo"<br>";
-    // print_r($login);
-
 ?>
-
-<style>
-
-</style>
 
 <!DOCTYPE html>
 <html lang="pt_BR">
@@ -132,6 +130,10 @@
                             {
                                 echo "<td>".'Outro'."</td>";
                             }
+                            elseif ($user_data['situacao_civil'] == 'V')
+                            {
+                                echo "<td>".'Viúvo'."</td>";
+                            }
                             echo "<td>".$user_data['statusa']."</td>";
                             echo "<td>".$id_usuario_solicitante['nome_usuario']."</td>";
                             echo "<td>
@@ -157,6 +159,12 @@
         </div>
 
     </main>
+
+    <script src="JS/confirmation.js"></script>
+    <script src="JS/searchsolicitacao.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
 
 
 
