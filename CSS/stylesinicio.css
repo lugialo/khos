@@ -1,0 +1,38 @@
+body
+{
+    font-family: 'Roboto Mono';
+    /* background-image: url(/images/fundo.jpg); */
+    margin: auto;
+}
+
+header #top{
+    background: purple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+header #top .topleft img{
+    max-width: 80px;
+    max-height: 80px;
+    height: auto;
+    width: auto;
+}
+
+header #top .links a {
+    color: white;
+    text-decoration: none;
+    
+}
+
+header #top .links a:hover {
+    color: yellow;
+}
+
+.card{
+    left: 1%;
+}

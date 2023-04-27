@@ -1,0 +1,61 @@
+body
+{
+    font-family: 'Roboto Mono';
+    background-image: linear-gradient(45deg, purple, rgb(31, 164, 109));
+    margin: auto;
+}
+
+header #top{
+    background: purple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+ header #top .topleft img{
+    max-width: 80px;
+    max-height: 80px;
+    height: auto;
+    width: auto;
+}
+
+header #top .links a{
+    text-decoration: none;
+    color: white;
+
+}
+
+header #top .links a:hover{
+    color: yellow;
+
+}
+
+main a{
+    text-decoration: none;
+    color: black;
+}
+
+main a:hover{
+    color: yellow;
+}
+
+/* Bootstrap classes */
+.table{
+    background-color: aliceblue;
+    font-family: 'Roboto Mono';
+}
+
+.box-search
+{  color: aliceblue;
+   
+   display: flex; 
+   justify-content: center;
+   gap: .1%;
+}
+
+
+
