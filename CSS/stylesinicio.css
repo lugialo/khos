@@ -5,6 +5,11 @@ body
     margin: auto;
 }
 
+:root{
+    --primary-color: #ffff;
+    --secondary-color: #0000;
+}
+
 header #top{
     background: purple;
     display: flex;
