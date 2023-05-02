@@ -1,7 +1,7 @@
 body
 {
     font-family: 'Roboto Mono';
-    background-image: linear-gradient(45deg, purple, rgb(31, 164, 109));
+    /* background-image: linear-gradient(45deg, purple, rgb(31, 164, 109)); */
     margin: auto;
 }
 

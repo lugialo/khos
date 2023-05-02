@@ -28,8 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `adotante` (
+  `id_solicitacao` int(1) NOT NULL,
   `nome_adotante` varchar(50) NOT NULL,
   `genero` char(1) NOT NULL,
+  `estado` varchar(50) NOT NULL, 
+  `cidade` varchar(50) NOT NULL, 
+  `endereco` varchar(50) NOT NULL,
   `situacao_civil` varchar(50) NOT NULL,
   `generico1` varchar(50) NOT NULL,
   `generico2` varchar(50) NOT NULL,
@@ -41,8 +45,8 @@ CREATE TABLE `adotante` (
   `generico8` varchar(50) NOT NULL,
   `generico9` varchar(50) NOT NULL,
   `generico10` varchar(50) NOT NULL,
-  `status` int(1) NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cod_usuario` int(12) NOT NULL,
+  `statusa` int(1) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -135,7 +139,7 @@ INSERT INTO `usuarios` (`cod_usuario`, `nome_usuario`, `sobrenome_usuario`, `ema
 -- Índices para tabela `adotante`
 --
 ALTER TABLE `adotante`
-  ADD PRIMARY KEY (`id_adotante`),
+  ADD PRIMARY KEY (`id_solicitacao`),
   ADD KEY `fk_usuarioadotante` (`cod_usuario`);
 
 --
@@ -179,7 +183,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `adotante`
 --
 ALTER TABLE `adotante`
-  MODIFY `id_adotante` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tipo_usuario`

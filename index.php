@@ -33,7 +33,7 @@
         <div id="top">
             <div class="topleft">
                 <img src="images/Khos-removebg-preview.png" alt="">
-                <!--<a href="index.html"> <h1>Khos</h1> </a>-->
+                <!--<a href="index.php"> <h1>Khos</h1> </a>-->
             </div><!--topleft-->
 
             <div class="links">

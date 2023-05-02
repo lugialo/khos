@@ -16,17 +16,19 @@
 
     $sql = "SELECT * from usuarios where email_usuario = '$login'";
 
+
     $id_consulta  = mysqli_query($conexao, "SELECT * FROM usuarios WHERE email_usuario = '$login'");
-
-
+    
     $usuario = mysqli_fetch_object($id_consulta);
 
     //Transformar objeto em string
     $usuario_int = json_encode($usuario);
+
     $usuario_substr = substr($usuario_int, 16,2);
 
-
     $id_adotante = mysqli_query($conexao, "SELECT * FROM adotante WHERE cod_usuario = '$usuario_substr'");
+
+    print_r($id_adotante);
 
     $id_consulta2 = "SELECT * from adotante where cod_usuario = '$usuario_substr'";
 
@@ -67,7 +69,7 @@
     <?php include 'CSS/stylesinicio.css'; ?>
 </style>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="iso-88951">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +83,7 @@
 <header>
         <div id="top">
             <div class="topleft">
-                <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
+                <a href="index.php"><img src="images/Khos-removebg-preview.png" alt=""></a>
                 
             </div><!--topleft-->  
             
@@ -101,7 +103,7 @@
     }
     else if ($result2 -> num_rows <> 0){
     echo"<div class='card' style='width:18rem;' id='card'>"; 
-    echo "<div class='card-header'> Sua solicitação: " . $id_solicitacao . "</div>";
+    echo "<div class='card-header'> Sua solicitação: N°" . $id_solicitacao . "</div>";
     echo "<ul class='list-group list-group-flush'>";
     echo "<li class='list-group list-group-item'>Nome: " . $nome_adotante . "</li>";
     if ($genero = 'M')

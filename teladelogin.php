@@ -9,7 +9,7 @@
     <title>Login</title>
     <style>
         
-        <?php include 'CSS/styleslogin.css'; ?>
+        <?php include 'CSS/styleslogin.css';?>
     
     </style>
 </head>
@@ -17,8 +17,8 @@
     <header>
         <div id="top">
             <div class="topleft">
-                <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
-                <!--<a href="index.html"> <h1>Khos</h1> </a>-->
+                <a href="index.php"><img src="images/Khos-removebg-preview.png" alt=""></a>
+                <!--<a href="index.php"> <h1>Khos</h1> </a>-->
             </div><!--topleft-->        
     </header>
 

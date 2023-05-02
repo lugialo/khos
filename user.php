@@ -13,7 +13,7 @@
     {
         $data = $_GET['search'];
         
-        $sql = "SELECT * from usuarios WHERE cod_usuario like '%$data%' or nome_usuario LIKE '%$data%' or email_usuario LIKE '%$data%' ORDER BY cod_usuario DESC";
+        $sql = "SELECT * from usuarios WHERE cod_usuario like '%$data%' or nome_usuario LIKE '%$data%' or sobrenome_usuario LIKE '%$data%' or email_usuario LIKE '%$data%' ORDER BY cod_usuario DESC";
     }
     else
     {
@@ -40,7 +40,7 @@
     <header>
         <div id="top">
             <div class="topleft">
-                <a href="index.html"><img src="images/Khos-removebg-preview.png" alt=""></a>
+                <a href="index.php"><img src="images/Khos-removebg-preview.png" alt=""></a>
             </div><!--topleft-->  
 
             <div class="links">
